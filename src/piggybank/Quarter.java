@@ -13,9 +13,19 @@ public class Quarter extends AbstractMoney
         this.name = name;
     }
 
+    public Quarter()
+    {
+        this.quantity = 1;
+        this.value = value;
+        this.name = name;
+    }
+
     @Override
     public String toString()
     {
+        if(this.quantity > 1){
+            return quantity + " "+ name+"s"+"\n";
+        }
         return quantity + " " + name+"\n";
     }
 

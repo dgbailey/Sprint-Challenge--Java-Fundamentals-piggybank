@@ -13,10 +13,22 @@ public class Nickel extends AbstractMoney
         this.name = name;
     }
 
+    public Nickel()
+    {
+        this.quantity = 1;
+        this.value = value;
+        this.name = name;
+    }
+
     @Override
     public String toString()
     {
-        return quantity + "  " + name+"\n";
+        if(this.quantity > 1){
+            return quantity + " "+ name+"s"+"\n";
+        }
+
+        return quantity + " "+ name+"\n";
+
     }
 
     public double totalValue()

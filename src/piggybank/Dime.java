@@ -13,9 +13,20 @@ public class Dime extends AbstractMoney
         this.name = name;
     }
 
+    public Dime()
+    {
+        this.quantity = 1;
+        this.value = value;
+        this.name = name;
+    }
+
     @Override
     public String toString()
     {
+        if(this.quantity > 1){
+            return quantity + " "+ name+"s"+"\n";
+        }
+
         return quantity + " " + name+"\n";
     }
 

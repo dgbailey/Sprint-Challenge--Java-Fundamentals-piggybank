@@ -13,10 +13,18 @@ public class Dollar extends AbstractMoney
         this.name = name;
     }
 
+    public Dollar()
+    {
+        this.quantity = 1;
+        this.value = value;
+        this.name = name;
+    }
+
     @Override
     public String toString()
+
     {
-        return quantity + " " + name+"\n";
+        return "$" + quantity + "\n";
     }
 
     public double totalValue()

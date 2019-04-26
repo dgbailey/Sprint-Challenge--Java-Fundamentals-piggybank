@@ -7,7 +7,7 @@ public class Main
 {
     public static void printPiggyBankTotal(ArrayList<AbstractMoney> contents)
     {
-        double total = 0.0;
+        double total = 0.00;
         for (AbstractMoney m : contents)
         {
 
@@ -25,18 +25,16 @@ public class Main
     {
 
 
-        Quarter quarters = new Quarter(4);
-        Penny pennies = new Penny(10);
-        Nickel nickles = new Nickel(20);
-        Dollar dollars = new Dollar(1);
-        Dime dimes = new Dime(10);
+
 
         ArrayList<AbstractMoney> piggyBank = new ArrayList<AbstractMoney>();
-        piggyBank.add(quarters);
-        piggyBank.add(dimes);
-        piggyBank.add(nickles);
-        piggyBank.add(dollars);
-        piggyBank.add(pennies);
+        piggyBank.add(new Quarter());
+        piggyBank.add(new Dime());
+        piggyBank.add(new Dollar(5));
+        piggyBank.add(new Nickel(3));
+        piggyBank.add(new Dime(7));
+        piggyBank.add(new Dollar());
+        piggyBank.add(new Penny(10));
 
 
         System.out.println(piggyBank.toString());
