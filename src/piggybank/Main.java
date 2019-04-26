@@ -21,6 +21,56 @@ public class Main
         System.out.println(fp.format(total));
     }
 
+    public static void withdraw(ArrayList<AbstractMoney> bank,int quantity,String denomination)
+    {
+        int initialWithdraw = quantity;
+        int runningWithdraw = quantity;
+
+
+        while(runningWithdraw > 0) {
+
+            for (AbstractMoney m : bank) {
+                System.out.println(m.getName());
+                System.out.println(m.quantity);
+                if (m.getName() == denomination && m.quantity >= quantity) {
+
+                    m.withdraw(quantity);
+
+
+                    runningWithdraw = runningWithdraw - quantity;
+                   //inner running setting to zero for some reason
+                    System.out.println("Denomination match!");
+                    System.out.println("After withdrawel: "+m.quantity);
+
+
+
+                }
+                else if (m.getName() == denomination && m.quantity < quantity && m.quantity >0){
+
+                    m.withdraw(m.quantity);
+                    System.out.println("Denomination match!");
+                    System.out.println("After withdrawel: "+m.quantity);
+
+                }
+
+                else if (m.getName() != denomination){
+                    System.out.println("Denomination did not match");
+                }
+
+                else {
+                    System.out.println("Cannot withdraw not enough funds");
+                    runningWithdraw = 0;
+
+                }
+                System.out.println("Updated bank statement "+"\n"+bank.toString());
+                printPiggyBankTotal(bank);
+
+            }
+        }
+
+
+    }
+
     public static void main(String[] args)
     {
 
@@ -40,7 +90,7 @@ public class Main
         System.out.println(piggyBank.toString());
         printPiggyBankTotal(piggyBank);
 
-
+        withdraw(piggyBank,3, "Dollar");
 
 
 

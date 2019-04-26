@@ -34,4 +34,13 @@ public class Penny extends AbstractMoney
     {
         return this.value * this.quantity;
     }
+
+    public void withdraw( int amount)
+    {
+        this.quantity = this.quantity - amount;
+    }
+
+    public String getName (){
+        return this.name;
+    }
 }

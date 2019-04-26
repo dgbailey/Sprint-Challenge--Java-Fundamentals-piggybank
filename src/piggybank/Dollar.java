@@ -31,4 +31,14 @@ public class Dollar extends AbstractMoney
     {
         return this.value * this.quantity;
     }
+
+    public void withdraw( int amount)
+    {
+
+        quantity = quantity - amount;
+    }
+
+    public String getName (){
+        return this.name;
+    }
 }

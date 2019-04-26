@@ -9,6 +9,7 @@ public  abstract class AbstractMoney
 
     int value;
     int quantity;
+    String name;
 
 
     public AbstractMoney(){
@@ -18,6 +19,7 @@ public  abstract class AbstractMoney
 
         this.value = value;
         this.quantity = quantity;
+        this.name = name;
 
     }
 
@@ -33,6 +35,15 @@ public  abstract class AbstractMoney
     public double totalValue()
     {
         return this.value * this.quantity;
+    }
+
+    public void withdraw( int amount)
+    {
+        this.quantity = this.quantity - amount;
+    }
+
+    public String getName (){
+        return this.name;
     }
 
 }
